@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modal</title>
+</head>
+<body>
+    <div class="content">
+        <button class="modal__btn" data-modal_btn="first" data-speed="700">Открыть окно</button>
+        <button class="modal__btn" data-modal_btn="second">Открыть окно</button>
+    </div>
+    <div class="modal">
+        <div class="modal__container" data-modal_target="first">
+            <button class="modal__close-btn">
+                <img src="cross.svg" alt="Закрыть">
+            </button>
+             <div class="modal__content modal-window">
+                 <div class="modal-window__description">
+                    <h2>Lipsum dolor sit amet</h2>
+                    <p> Lipsum dolor sit amet, consectetur adipisicing elit.
+                    Reprehenderit deserunt omnis molestiae quasi ut ipsum quas,
+                    iure delectus nemo tempore, aut veritatis eos mollitia illum,
+                    neque velit sapiente tenetur voluptatem!
+                    </p>
+                </div>
+                 <div class="modal-window__navigation">
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                 </div>
+             </div>
+        </div>
+        <div class="modal__container" data-modal_target="second">
+            <button class="modal__close-btn">
+                <img src="cross.svg" alt="Закрыть">
+            </button>
+             <div class="modal__content modal-window">
+                 <div class="modal-window__description">
+                    <h2>Lipsum dolor sit amet</h2>
+                    <p> Lipsum dolor sit amet, consectetur adipisicing elit.
+                    Reprehenderit deserunt omnis molestiae quasi ut ipsum quas,
+                    iure delectus nemo tempore, aut veritatis eos mollitia illum,
+                    neque velit sapiente tenetur voluptatem!
+                    </p>
+                </div>
+                 <div class="modal-window__navigation">
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                    <button class="modal-window__content-btn">Lipsum dolor</button>
+                 </div>
+             </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

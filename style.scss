@@ -1,0 +1,157 @@
+*:focus{
+    outline: none;
+    box-shadow: 0 0 1px 1px #8b8b8b;
+}
+
+.modal{
+    --transition-time: .3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    transition: opacity var(--transition-time), visibility var(--transition-time);
+    visibility: hidden;
+
+    &::before{
+        content:'';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+    }
+
+    &__container{
+        position: relative;
+        display: none;
+        width: 700px;
+        margin: 50px auto;
+        vertical-align: middle;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 10px;
+        z-index: 100;
+        cursor: default;
+    }
+
+    &__close-btn{
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        height: 20px;
+        width: 20px;
+        padding: 0;
+        border-radius: 50%;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: #ffffff;
+        cursor: pointer;
+        transition:transform .3s linear ;
+        &:focus{
+            transform: rotate(90deg);
+        }
+        &:hover{
+            transform: rotate(90deg);
+        }
+        img{
+            max-width: 100%;
+        }
+       
+    }
+}
+
+.modal-window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // .modal-window__description
+
+    &__description {
+        margin-bottom: 10px;
+        padding: 5px;
+        h2{
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        p{
+            margin: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    // .modal-window__navigation
+
+    &__navigation {
+        align-self: flex-end;
+    }
+
+    // .modal-window__content-btn
+
+    &__content-btn {
+        margin-right: 10px;
+        padding: 10;
+        border: none;
+        font: inherit;
+        color: #000000;
+        background-color: #ffffff;
+        border: 1px solid #808080;
+        cursor: pointer;
+        transition: color .3s linear, background-color .3s linear;
+        &:last-child{
+            margin-right: 0;
+        }
+        &:focus{
+            background-color:#808080;   
+            color: #ffffff;     
+        }
+        &:hover{
+            background-color:#808080;   
+            color: #ffffff;
+        }
+    }
+}
+
+
+
+// Классы для работа в JS
+
+.modal{
+    &.is-open{
+        opacity: 1;
+        visibility: visible;
+        transition: opacity var(--transition-time), visibility var(--transition-time);
+    }
+    &__container{
+        &.modal-open{
+            display: inline-block;
+        }
+    }
+}
+
+.fade{
+    opacity: 0;
+    transition: opacity var(--transition-time);
+
+    &.anime-open{
+        opacity: 1;
+        transition: opacity var(--transition-time);
+    }
+}
+    
+.disable-scroll{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
